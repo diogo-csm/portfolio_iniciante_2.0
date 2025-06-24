@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Diogo Monteiro | Software Developer</title>
+</head>
+<body>
+
+    <div class="particulas">    
+
+    </div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        
+        <img src="./img/diogoDev_portfolio.png" alt="" class="foto-perfil">
+        <h1>Diogo Monteiro</h1>
+        <p class="cabecalho-subtitulo">Software Developer</p>
+        
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non autem quisquam at obcaecati! Optio voluptate facilis omnis corporis tempore aspernatur, ipsa itaque numquam hic, nobis asperiores, in quasi illo nisi!</p>
+        </div>
+    </section>
+    
+    <section id="projetos" class="protejos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/e-commerce_p2.jpg" alt="" class="projetos-imagem">
+                    <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">E-commerce</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed inventore quibusdam sint necessitatibus ipsam placeat officiis eius. Voluptates et mollitia nam iste facere perferendis, culpa necessitatibus, eaque, natus quibusdam ut.
+                    </p>
+                </div>
+            </div>
+            <div class="projetos-card">
+                <img src="./img/lista_de_tarefa_p2.jpg" alt="" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Lista de Tarefas</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed inventore quibusdam sint necessitatibus ipsam placeat officiis eius. Voluptates et mollitia nam iste facere perferendis, culpa necessitatibus, eaque, natus quibusdam ut.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contatos" id="formulario-contatos" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+            <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" id="mensagem" rows="6" ></textarea>
+            </div>
+            <button class="botao-form" type="submit">
+                Enviar via WhatsApp
+            </button>
+        </form>
+
+    </section>
+    <script>
+
+        function enviarWhats(event){
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '13657393222';
+            const texto = `Olá! Me chamo ${nome}!${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+            const url = `https://wa.me/${telefone}/?text=${msgFormatada}`;
+
+            window.open(url, '_blank')
+        }
+
+
+    </script>
+
+</body>
+</html>
